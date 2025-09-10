@@ -1,6 +1,7 @@
 "use client";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { FloatingDock } from "./ui/floating-dock";
+import KeyboardDemo from "./KeyboardDemo";
 
 export default function FeaturesSection() {
   const features = [
@@ -120,6 +121,7 @@ export default function FeaturesSection() {
           <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20 rounded-xl" />
         </div>
       ),
+      // extra: <KeyboardDemo />,
       className: "md:col-span-1",
     },
   ];
@@ -158,6 +160,7 @@ export default function FeaturesSection() {
                 description={feature.description}
                 href={feature.href}
                 cta={feature.cta}
+                extra={feature.extra}
               />
             );
           })}
