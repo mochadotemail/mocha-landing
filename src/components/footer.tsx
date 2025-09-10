@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <h3 className="font-serif text-lg font-bold text-primary">
-              <span className="italic">mocha</span>
+              <span className="italic pr-0.5">mocha</span>
               <span className="text-primary/70">.email</span>
             </h3>
           </div>

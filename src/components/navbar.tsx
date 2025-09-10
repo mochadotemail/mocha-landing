@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import { ArrowUpRight } from "lucide-react";
@@ -24,11 +25,12 @@ export default function Navbar() {
       </h1>
 
       <div className="hidden md:flex items-center gap-8">
-        
-        <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group">
-          About
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-        </button>
+        <Link href="/about">
+          <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+          </button>
+        </Link>
         <button
           onClick={() => scrollToSection("pricing")}
           className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
@@ -40,9 +42,11 @@ export default function Navbar() {
 
       <div className="flex items-center gap-4">
         <div className="md:hidden flex gap-4">
-          <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            About
-          </button>
+          <Link href="/about">
+            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </button>
+          </Link>
            <button
             onClick={() => scrollToSection("pricing")}
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"

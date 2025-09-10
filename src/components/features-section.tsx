@@ -1,4 +1,6 @@
+"use client";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { FloatingDock } from "./ui/floating-dock";
 
 export default function FeaturesSection() {
   const features = [
@@ -11,7 +13,7 @@ export default function FeaturesSection() {
       cta: "Learn more",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/15 dark:from-primary/10 dark:to-primary/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/15 dark:from-primary/10 dark:to-primary/20 rounded-xl" />
         </div>
       ),
       className: "md:col-span-2 lg:row-span-2",
@@ -25,7 +27,7 @@ export default function FeaturesSection() {
       cta: "Try it",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/15 dark:from-secondary/10 dark:to-secondary/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/15 dark:from-secondary/10 dark:to-secondary/20 rounded-xl" />
         </div>
       ),
       className: "md:col-span-1 lg:row-span-1",
@@ -39,7 +41,15 @@ export default function FeaturesSection() {
       cta: "See how",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-2/10 to-chart-4/15 dark:from-chart-2/10 dark:to-chart-4/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-chart-2/10 to-chart-4/15 dark:from-chart-2/10 dark:to-chart-4/20 rounded-xl">
+          <div className="h-full p-6">
+          <FloatingDock items={[
+            { icon: "‼️", title: "Priority", href: "#" },
+            { icon: "📩", title: "Inbox", href: "#" },
+            { icon: "🚫", title: "Spam", href: "#" },
+          ]}/>
+          </div>
+          </div>
         </div>
       ),
       className: "md:col-span-1 lg:row-span-1",
@@ -53,7 +63,7 @@ export default function FeaturesSection() {
       cta: "Explore",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-5/10 to-accent/15 dark:from-chart-5/10 dark:to-accent/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-chart-5/10 to-accent/15 dark:from-chart-5/10 dark:to-accent/20 rounded-xl" />
         </div>
       ),
       className: "md:col-span-1",
@@ -67,7 +77,7 @@ export default function FeaturesSection() {
       cta: "Chat now",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
         </div>
       ),
       className: "md:col-span-2",
@@ -80,7 +90,7 @@ export default function FeaturesSection() {
       cta: "Experience",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-3/10 to-chart-3/15 dark:from-chart-3/10 dark:to-chart-3/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-chart-3/10 to-chart-3/15 dark:from-chart-3/10 dark:to-chart-3/20 rounded-xl" />
         </div>
       ),
       className: "md:col-span-1",
@@ -94,7 +104,7 @@ export default function FeaturesSection() {
       cta: "Customize",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/15 dark:from-accent/10 dark:to-accent/25" />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/15 dark:from-accent/10 dark:to-accent/25 rounded-xl" />
         </div>
       ),
       className: "md:col-span-1",
@@ -107,7 +117,7 @@ export default function FeaturesSection() {
       cta: "Try shortcut",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20 rounded-xl" />
         </div>
       ),
       className: "md:col-span-1",

@@ -59,7 +59,7 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-serif text-foreground leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-tight mb-6">
             <span>Choose The Plan</span>
             <br />
             <span className="text-primary italic">That's Right For You</span>
