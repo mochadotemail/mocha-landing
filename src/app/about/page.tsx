@@ -36,31 +36,32 @@ const AboutPage = () => {
         <h3 className="text-4xl sm:text-5xl lg:text-6xl font-serif my-8 sm:my-12 text-foreground leading-tight">
           An Extension of Your Mind
         </h3>
-        <div className="w-full max-w-4xl text-xl">
+        <div className="w-full max-w-4xl text-xl text-left">
           <p className="text-muted-foreground leading-relaxed mb-8">
             We are working on building the first inbox that works like an
             extension of your mind - it writes in your voice, organizes itself
             based on your habits, and gives you rule-based control over
             everything.
           </p>
-          <p className="text-muted-foreground  leading-relaxed">
+          <p className="text-muted-foreground  leading-relaxed mb-8">
             The goal is to create a system that reduces friction, respects your
             workflow, and adapts to how you work – not the other way around.
           </p>
+           <p className="text-muted-foreground text-xl leading-relaxed">
+          We're a small team of developers and designers building tools
+          that make email more personal, programmable, and effortless to work
+          with.
+        </p>
         </div>
       </section>
 
 
       {/* Team Section */}
-      <section className="w-full lg:w-4/6 flex flex-col items-center mt-8">
-        <p className="text-muted-foreground text-xl text-center leading-relaxed mb-12 max-w-3xl">
-          We're a small team of developers and designers building tools
-          that make email more personal, programmable, and effortless to work
-          with.
-        </p>
+      <section className="w-full  flex flex-col items-center mt-8 ">
+       
 
         {/* Team Grid */}
-        <div className="w-full flex flex-col gap-4 sm:gap-6">
+        <div className="w-full flex flex-row gap-4 sm:gap-6 justify-center">
           {teamMembers.map((member, index) => (
             <div
               key={index}

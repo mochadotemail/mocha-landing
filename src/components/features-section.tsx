@@ -160,7 +160,7 @@ export default function FeaturesSection() {
                 description={feature.description}
                 href={feature.href}
                 cta={feature.cta}
-                extra={feature.extra}
+                // extra={feature.extra}
               />
             );
           })}
