@@ -18,7 +18,6 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   description: string;
   href: string;
   cta: string;
-  extra?: ReactNode;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -43,7 +42,6 @@ const BentoCard = ({
   description,
   href,
   cta,
-  extra,
   ...props
 }: BentoCardProps) => (
   <div
@@ -75,7 +73,6 @@ const BentoCard = ({
         </h3>
         <p className="max-w-lg text-neutral-400">{description}</p>
       </div>
-      {extra && <div className="mt-4 flex items-center justify-center">{extra}</div>}
 
       <div
         className={cn(

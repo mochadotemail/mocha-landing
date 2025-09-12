@@ -118,10 +118,11 @@ export default function FeaturesSection() {
       cta: "Try shortcut",
       background: (
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20 rounded-xl" />
+          <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20 rounded-xl">
+          <KeyboardDemo/>
+          </div>
         </div>
       ),
-      // extra: <KeyboardDemo />,
       className: "md:col-span-1",
     },
   ];

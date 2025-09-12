@@ -221,7 +221,7 @@ function BottomRow() {
 export default function KeyboardDemo() {
   return (
     <div className="flex scale-[0.70] items-center justify-center">
-      <Keyboard className="bg-[#21222550]">
+      <Keyboard className="bg-[#21222550]  [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]">
         <TopRow />
         <SecondRow />
         <ThirdRow />
