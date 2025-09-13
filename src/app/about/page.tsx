@@ -21,7 +21,7 @@ const AboutPage = () => {
     },
     {
       name: "Ekaksh Janweja",
-      link: "https://www.linkedin.com/in/ekakshjanweja/",
+      link: "https://x.com/ekaksh_janweja",
     },
     {
       name: "Shiv Shanmugam",
