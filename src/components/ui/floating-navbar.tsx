@@ -41,16 +41,10 @@ export const FloatingNav = ({
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
       if (scrollYProgress.get() < 0.05) {
         setVisible(false);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(true)
       }
     }
   });
@@ -70,7 +64,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-transparent backdrop-blur-sm rounded-xl shadow-lg z-[5000] px-4 py-3 items-center justify-between",
+          "flex w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-xl shadow-lg z-[5000] px-4 py-3 items-center justify-between",
           className
         )}
       >
@@ -91,7 +85,7 @@ export const FloatingNav = ({
                 <button
                   key={`link=${idx}`}
                   onClick={() => scrollToSection(sectionId)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
+                  className="text-sm cursor-pointer font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
                 >
                   <span className="block sm:hidden">{navItem.icon}</span>
                   <span className="hidden sm:block">{navItem.name}</span>
@@ -103,10 +97,10 @@ export const FloatingNav = ({
               <Link
                 key={`link=${idx}`}
                 href={navItem.link}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
+                className="text-sm cursor-ne-resize font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="sm:block flex items-center">
+                <span className="flex items-center">
                   <span>{navItem.name}</span>
                   {navItem.name === "Manifesto" && (
                     <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0 group-active:translate-y-0" />
