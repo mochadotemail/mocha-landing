@@ -49,14 +49,14 @@ export default function RootLayout({
         className={`${inter.variable} ${instrumentSerif.variable} ${figtree.variable} ${newsreader.variable} antialiased relative overflow-hidden font-sans`}
         style={{ height: "auto", overflow: "auto" }}
       >
-        {/* Global subtle paper texture background */}
+        {/* Global subtle paper texture background
         <div
           className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-center opacity-15 dark:opacity-[3%]"
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1603484477859-abe6a73f9366?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           }}
-        />
+        /> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
