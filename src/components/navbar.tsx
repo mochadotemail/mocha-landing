@@ -25,12 +25,20 @@ export default function Navbar() {
       </h1>
 
       <div className="hidden md:flex items-center gap-8">
-        <Link href="/about">
-          <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group">
-            About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </button>
-        </Link>
+        <button
+          onClick={() => scrollToSection("hero")}
+          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
+        >
+          Home
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+        </button>
+        <button
+          onClick={() => scrollToSection("features")}
+          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
+        >
+          Features
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+        </button>
         <button
           onClick={() => scrollToSection("pricing")}
           className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
@@ -38,21 +46,41 @@ export default function Navbar() {
           Pricing
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
         </button>
+        <Link href="/about">
+          <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center">
+            Manifesto
+            <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0 group-active:translate-y-0" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+          </button>
+        </Link>
       </div>
 
       <div className="flex items-center gap-4">
         <div className="md:hidden flex gap-4">
-          <Link href="/about">
-            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              About
-            </button>
-          </Link>
-           <button
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => scrollToSection("features")}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Features
+          </button>
+          <button
             onClick={() => scrollToSection("pricing")}
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Pricing
           </button>
+          <Link href="/about">
+            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center">
+              Manifesto
+              <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0 group-active:translate-y-0" />
+            </button>
+          </Link>
         </div>
         <div className="flex items-center gap-4">
           <ModeToggle />

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Figtree, Newsreader } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { IconHome, IconUser, IconMessage } from "@tabler/icons-react";
+import { FloatingNav } from "../components/ui/floating-navbar";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -38,6 +40,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+   const navItems = [
+     {
+       name: "Home",
+       link: "#hero",
+       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     },
+     {
+       name: "Features",
+       link: "#features",
+       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     },
+     {
+       name: "Pricing",
+       link: "#pricing",
+       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     },
+     {
+       name: "Manifesto",
+       link: "/about",
+       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     },
+   ];
+
   return (
     <html
       lang="en"
@@ -63,7 +89,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+
+          <Navbar/>
+          <FloatingNav navItems={navItems} />
           {children}
           <Footer />
         </ThemeProvider>
