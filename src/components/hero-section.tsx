@@ -1,9 +1,9 @@
-import { Button } from "./ui/button";
+import { CTAButton } from "./ui/cta-button";
 import HeroVisual from "./hero-visual";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col items-center justify-center pb-8 pt-24">
+    <div className="flex flex-col items-center justify-center pb-8 pt-24" id="hero">
       <h1 className="text-7xl font-medium text-center text-primary">
         <span className="font-serif tracking-wide">Your Inbox, Supercharged</span>
         <br />
@@ -16,9 +16,7 @@ export default function HeroSection() {
       </p>
       <div>
           
-          <Button className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-medium shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 ease-out focus:ring-2 focus:ring-primary/50 focus:ring-offset-2">
-           Join Waitlist 
-          </Button>
+          <CTAButton />
       </div>
 
       <HeroVisual />

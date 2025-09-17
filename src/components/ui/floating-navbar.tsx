@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import {
   motion,
   AnimatePresence,
@@ -9,6 +10,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
+import { CTAButton } from "./cta-button";
 import { ArrowUpRight } from "lucide-react";
 
 // Smooth scroll function
@@ -35,6 +37,8 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const [visible, setVisible] = useState(false);
 
@@ -84,7 +88,13 @@ export const FloatingNav = ({
               return (
                 <button
                   key={`link=${idx}`}
-                  onClick={() => scrollToSection(sectionId)}
+                  onClick={() => {
+                    if (pathname === "/") {
+                      scrollToSection(sectionId);
+                    } else {
+                      router.push(`/#${sectionId}`);
+                    }
+                  }}
                   className="text-sm cursor-pointer font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
                 >
                   <span className="block sm:hidden">{navItem.icon}</span>
@@ -97,14 +107,11 @@ export const FloatingNav = ({
               <Link
                 key={`link=${idx}`}
                 href={navItem.link}
-                className="text-sm cursor-ne-resize font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
+                className="text-sm cursor-pointer font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group flex items-center"
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
                 <span className="flex items-center">
                   <span>{navItem.name}</span>
-                  {navItem.name === "Manifesto" && (
-                    <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0 group-active:translate-y-0" />
-                  )}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </Link>
@@ -114,10 +121,7 @@ export const FloatingNav = ({
 
         {/* CTA Button */}
         <div className="flex items-center gap-4 flex-shrink-0">
-          <Button className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-medium shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 ease-out focus:ring-2 focus:ring-primary/50 focus:ring-offset-2">
-            Join Waitlist
-            <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:translate-x-0 group-active:translate-y-0" />
-          </Button>
+          <CTAButton />
         </div>
       </motion.div>
     </AnimatePresence>
