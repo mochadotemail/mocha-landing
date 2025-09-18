@@ -50,6 +50,14 @@
     backgroundPosition: 350% 50%, 350% 50%;
     }
   }
+  @keyframes aurora {
+  from {
+    backgroundPosition: 50% 50%, 50% 50%;
+    }
+  to {
+    backgroundPosition: 350% 50%, 350% 50%;
+    }
+  }
 }
 :root {
   --background: oklch(99.1% 0.0 89.876);
@@ -235,7 +243,6 @@
   }
 }
 
-@import "tailwindcss";
 @theme inline {
   --animate-aurora: aurora 60s linear infinite;
   @keyframes aurora {

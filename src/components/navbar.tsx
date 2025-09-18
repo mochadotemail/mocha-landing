@@ -3,9 +3,7 @@
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
-import { Button } from "./ui/button";
 import { CTAButton } from "./ui/cta-button";
-import { ArrowUpRight } from "lucide-react";
 
 // Smooth scroll function
 const scrollToSection = (sectionId: string) => {

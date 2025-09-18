@@ -1,9 +1,13 @@
 import { CTAButton } from "./ui/cta-button";
 import HeroVisual from "./hero-visual";
+import { AuroraBackground } from "./ui/shadcn-io/aurora-background";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col items-center justify-center pb-8 pt-24">
+    
+    <div className="flex flex-col">
+      <AuroraBackground>
+    <div className="flex flex-col items-center justify-center pt-24">
       <h1 className="text-7xl font-medium text-center text-primary">
         <span className="font-serif tracking-wide">Your Inbox, Supercharged</span>
         <br />
@@ -16,10 +20,12 @@ export default function HeroSection() {
       </p>
       <div>
           
-          <CTAButton />
       </div>
-
+      </div>
+      </AuroraBackground>
+      <CTAButton className="mx-auto mt-4"/>
       <HeroVisual />
+
     </div>
   );
 }
