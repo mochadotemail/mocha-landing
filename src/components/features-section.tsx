@@ -1,10 +1,11 @@
 "use client";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { FloatingDock } from "./ui/floating-dock";
 import KeyboardDemo from "./KeyboardDemo";
 import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
 import { HexagonBackground } from "./ui/shadcn-io/hexagon-background";
 import AnimatedEmailConversation from "./AnimatedEmailConversation";
+import AnimatedEmailMessage from "./AnimatedEmailMessage";
+import EmailUIPreview from "./EmailTagMockup";
 
 export default function FeaturesSection() {
   const features = [
@@ -32,6 +33,10 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/15 dark:from-secondary/10 dark:to-secondary/20 rounded-xl" />
+          <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
+          <AnimatedEmailMessage
+           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]"
+          />
         </div>
       ),
       className: "md:col-span-1 lg:row-span-1",
@@ -46,32 +51,28 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-chart-2/10 to-chart-4/15 dark:from-chart-2/10 dark:to-chart-4/20 rounded-xl">
-          <div className="h-full p-6">
-          <FloatingDock items={[
-            { icon: "‼️", title: "Priority", href: "#" },
-            { icon: "📩", title: "Inbox", href: "#" },
-            { icon: "🚫", title: "Spam", href: "#" },
-          ]}/>
-          </div>
+              <EmailUIPreview
+           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
+          />
           </div>
         </div>
       ),
-      className: "md:col-span-1 lg:row-span-1",
+      className: "md:col-span-2 lg:row-span-1",
     },
-    {
-      name: "Adaptive inbox",
-      description:
-        "Your inbox learns from you — surfacing what's important, hiding what's not.",
-      icon: "🧠",
-      href: "#",
-      cta: "Explore",
-      background: (
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-chart-5/10 to-accent/15 dark:from-chart-5/10 dark:to-accent/20 rounded-xl" />
-        </div>
-      ),
-      className: "md:col-span-1",
-    },
+    // {
+    //   name: "Adaptive inbox",
+    //   description:
+    //     "Your inbox learns from you — surfacing what's important, hiding what's not.",
+    //   icon: "🧠",
+    //   href: "#",
+    //   cta: "Explore",
+    //   background: (
+    //     <div className="absolute inset-0">
+    //       <div className="absolute inset-0 bg-gradient-to-br from-chart-5/10 to-accent/15 dark:from-chart-5/10 dark:to-accent/20 rounded-xl" />
+    //     </div>
+    //   ),
+    //   className: "md:col-span-1",
+    // },
     {
       name: "Smart agent chat",
       description:
@@ -105,7 +106,7 @@ export default function FeaturesSection() {
       />
         </div>
       ),
-      className: "md:col-span-1",
+      className: "md:col-span-1 md:row-span-2",
     },
     {
       name: "Custom rules",
