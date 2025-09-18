@@ -2,6 +2,8 @@
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { FloatingDock } from "./ui/floating-dock";
 import KeyboardDemo from "./KeyboardDemo";
+import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
+import { HexagonBackground } from "./ui/shadcn-io/hexagon-background";
 
 export default function FeaturesSection() {
   const features = [
@@ -92,6 +94,11 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-chart-3/10 to-chart-3/15 dark:from-chart-3/10 dark:to-chart-3/20 rounded-xl" />
+           <FlickeringGrid
+           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
+           color="orange"
+           maxOpacity={1}
+      />
         </div>
       ),
       className: "md:col-span-1",
@@ -106,6 +113,9 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/15 dark:from-accent/10 dark:to-accent/25 rounded-xl" />
+           <HexagonBackground
+           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
+      />
         </div>
       ),
       className: "md:col-span-1",
@@ -136,7 +146,7 @@ export default function FeaturesSection() {
             <span>Features that make email</span>
             <span className="text-primary italic">effortless</span>
           </h2>
-          <p className="w-2/5 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="lg:w-2/5 w-2/3 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Everything you need to master your inbox with AI-powered
             productivity tools
           </p>

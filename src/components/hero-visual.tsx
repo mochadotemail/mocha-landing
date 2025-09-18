@@ -68,7 +68,7 @@ export default function HeroVisual() {
 
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-background/90 backdrop-blur-md border rounded-full py-1 px-2 hover:bg-background hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg group">
+            <div className="text-sm text-secondary-foreground/60 bg-background/90 backdrop-blur-md border rounded-full py-1 px-2 hover:bg-background  transition-all duration-300 cursor-pointer group">
               {/* <div className="w-0 h-0 border-l-[20px] border-l-foreground border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1 group-hover:border-l-primary transition-colors duration-300"></div> */}
               Coming Soon
             </div>
