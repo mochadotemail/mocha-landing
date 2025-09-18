@@ -4,23 +4,24 @@ import { FloatingDock } from "./ui/floating-dock";
 import KeyboardDemo from "./KeyboardDemo";
 import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
 import { HexagonBackground } from "./ui/shadcn-io/hexagon-background";
+import AnimatedEmailConversation from "./AnimatedEmailConversation";
 
 export default function FeaturesSection() {
   const features = [
-    {
-      name: "Research notes in one place",
-      description:
-        "Save articles, docs, and ideas into tables or collections. On-device AI turns messy notes into clear insights.",
-      icon: "📝",
-      href: "#",
-      cta: "Learn more",
-      background: (
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/15 dark:from-primary/10 dark:to-primary/20 rounded-xl" />
-        </div>
-      ),
-      className: "md:col-span-2 lg:row-span-2",
-    },
+    // {
+    //   name: "Research notes in one place",
+    //   description:
+    //     "Save articles, docs, and ideas into tables or collections. On-device AI turns messy notes into clear insights.",
+    //   icon: "📝",
+    //   href: "#",
+    //   cta: "Learn more",
+    //   background: (
+    //     <div className="absolute inset-0">
+    //       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/15 dark:from-primary/10 dark:to-primary/20 rounded-xl" />
+    //     </div>
+    //   ),
+    //   className: "md:col-span-2 lg:row-span-2",
+    // },
     {
       name: "Personalized AI replies",
       description:
@@ -79,8 +80,11 @@ export default function FeaturesSection() {
       href: "#",
       cta: "Chat now",
       background: (
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
+          <AnimatedEmailConversation
+           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]"
+          />
         </div>
       ),
       className: "md:col-span-2",
