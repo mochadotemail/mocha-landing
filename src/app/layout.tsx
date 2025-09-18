@@ -98,7 +98,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AuroraBackground />
+          {/* <AuroraBackground /> */}
           <Navbar/>
           <FloatingNav navItems={navItems} />
           {children}
