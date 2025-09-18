@@ -3,7 +3,7 @@ import HeroVisual from "./hero-visual";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col items-center justify-center pb-8 pt-24" id="hero">
+    <div className="flex flex-col items-center justify-center pb-8 pt-24">
       <h1 className="text-7xl font-medium text-center text-primary">
         <span className="font-serif tracking-wide">Your Inbox, Supercharged</span>
         <br />

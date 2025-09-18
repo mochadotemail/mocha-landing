@@ -30,49 +30,49 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-20 px-4">
+    <div className="flex flex-col items-center py-20 px-4 animate-fadeIn">
       {/* Mission Section */}
-      <section className="w-full lg:w-4/6 flex flex-col items-center text-center">
-        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-serif my-8 sm:my-12 text-foreground leading-tight">
+      <section className="w-full lg:w-4/6 flex flex-col items-center text-center prose prose-lg max-w-none">
+        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-serif my-8 sm:my-12 text-foreground leading-tight animate-slide-in-up">
           An Extension of Your Mind
         </h3>
-        <div className="w-full max-w-4xl text-xl text-left">
+        <div className="w-full max-w-4xl text-xl text-left leading-relaxed">
           <p className="text-muted-foreground leading-relaxed mb-8">
             We are working on building the first inbox that works like an
             extension of your mind - it writes in your voice, organizes itself
             based on your habits, and gives you rule-based control over
             everything.
           </p>
-          <p className="text-muted-foreground  leading-relaxed mb-8">
+          <p className="text-muted-foreground leading-relaxed mb-8">
             The goal is to create a system that reduces friction, respects your
             workflow, and adapts to how you work – not the other way around.
           </p>
-           <p className="text-muted-foreground text-xl leading-relaxed">
-          We're a small team of developers and designers building tools
-          that make email more personal, programmable, and effortless to work
-          with.
-        </p>
+          <p className="text-muted-foreground text-xl leading-relaxed mb-8">
+            We're a small team of developers and designers building tools
+            that make email more personal, programmable, and effortless to work
+            with.
+          </p>
         </div>
       </section>
 
-
-      {/* Team Section */}
-      <section className="w-full  flex flex-col items-center mt-8 ">
+{/* Team Section */}
+<section className="w-full flex flex-col items-center mt-8 animate-slide-in-up animation-delay-200">
        
 
         {/* Team Grid */}
-        <div className="w-full flex flex-row gap-4 sm:gap-6 justify-center">
+        <div className="w-full flex flex-row gap-4 sm:gap-6 justify-center flex-wrap">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="flex items-center justify-center gap-3 text-center"
+              className="flex items-center justify-center gap-3 text-center animate-slide-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <a
                 href={member.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl sm:text-2xl font-serif text-primary hover:text-primary/80 transition-colors relative group"
-                aria-label={`${member.name}'s profile`}
+                className="text-xl sm:text-2xl font-serif text-primary hover:text-primary/80 transition-all duration-300 ease-out transform hover:scale-105 hover-scale relative group"
+                aria-label={`Visit ${member.name}'s profile on ${member.link.includes('x.com') ? 'X' : 'LinkedIn'}`}
               >
                 {member.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary/80 transition-all duration-300 group-hover:w-full"></span>

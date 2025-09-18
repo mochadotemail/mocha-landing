@@ -10,24 +10,28 @@ import Navbar from "@/components/navbar";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
 const figtree = Figtree({
   variable: "--font-figtree",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -46,21 +50,25 @@ export default function RootLayout({
        name: "Home",
        link: "#hero",
        icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       ariaLabel: "Go to home section",
      },
      {
        name: "Features",
        link: "#features",
        icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       ariaLabel: "View features section",
      },
      {
        name: "Pricing",
        link: "#pricing",
        icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       ariaLabel: "View pricing section",
      },
      {
        name: "Manifesto",
        link: "/manifesto",
        icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       ariaLabel: "Read manifesto",
      },
    ];
 
@@ -72,7 +80,7 @@ export default function RootLayout({
     >
       <head />
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} ${figtree.variable} ${newsreader.variable} antialiased relative overflow-hidden font-sans`}
+        className={`${inter.variable} ${instrumentSerif.variable} ${figtree.variable} ${newsreader.variable} antialiased relative overflow-hidden font-sans animate-fadeIn`}
         style={{ height: "auto", overflow: "auto" }}
       >
         {/* Global subtle paper texture background

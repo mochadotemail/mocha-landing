@@ -35,7 +35,7 @@ export default function Navbar() {
             if (pathname === "/") {
               scrollToSection("hero");
             } else {
-              router.push("/#hero");
+              router.push("/");
             }
           }}
           className="cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
