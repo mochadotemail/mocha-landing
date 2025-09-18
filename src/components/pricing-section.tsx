@@ -94,7 +94,7 @@ export default function PricingSection() {
             >
               Yearly
             </span>
-            <span className={`text-xs text-green-600 font-medium bg-green-50 dark:bg-green-950 px-2 py-1 rounded-full animate-fade-in transition-opacity`}>
+            <span className={`text-xs ${ isYearly ? "text-green-600 bg-green-50" : "bg-red-50 text-red-600"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}>
               Save {isYearly ? '40' : '0'}%
             </span>
           </div>
