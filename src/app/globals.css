@@ -41,6 +41,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+  from {
+    backgroundPosition: 50% 50%, 50% 50%;
+    }
+  to {
+    backgroundPosition: 350% 50%, 350% 50%;
+    }
+  }
 }
 :root {
   --background: oklch(0.97 0.015 50);
@@ -155,7 +164,7 @@
 @theme inline {
   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
   var(--delay, 0ms);
- 
+
   @keyframes cell-ripple {
     0% {
       opacity: 0.4;
@@ -223,5 +232,27 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+@import "tailwindcss";
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

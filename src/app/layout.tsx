@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { IconHome, IconUser, IconMessage } from "@tabler/icons-react";
 import { FloatingNav } from "../components/ui/floating-navbar";
 import Navbar from "@/components/navbar";
+import { AuroraBackground } from "@/components/ui/shadcn-io/aurora-background";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -97,7 +98,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-
+          <AuroraBackground />
           <Navbar/>
           <FloatingNav navItems={navItems} />
           {children}
