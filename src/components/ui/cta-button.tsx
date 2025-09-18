@@ -17,7 +17,7 @@ export function CTAButton({
 }: CTAButtonProps) {
   return (
     <Button size="lg" className={cn(
-      "group bg-amber-600 hover:bg-orange-100 border-t border-l border-orange-200 text-white hover:text-neutral-800 shadow-sm focus:ring-2 focus:ring-primary/50 focus:ring-offset-2",
+      "group cursor-pointer bg-amber-600 rounded-xl hover:bg-amber-600/80 border-t border-l border-orange-200 text-white shadow-sm focus:ring-2 focus:ring-primary/50 focus:ring-offset-2",
       className
     )}>
       {children}

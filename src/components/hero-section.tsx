@@ -9,7 +9,7 @@ export default function HeroSection() {
         <br />
         <span className="italic font-serif tracking-wide text-primary/60">and Caffeinated</span>
       </h1>
-      <p className="mt-4 text-center text-muted-foreground/70 pb-8">
+      <p className="mt-4 text-center text-muted-foreground/90 pb-8">
         <span>Take control of your inbox with a fast and AI powered email</span>
         <br />
         <span>client built for people who live in email all day</span>

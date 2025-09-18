@@ -74,8 +74,8 @@ export const FloatingNav = ({
       >
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <h1 className="font-serif text-lg font-bold text-primary hover:text-primary/90 transition-colors">
-            <span className="italic mx-0.5">mocha</span>
+          <h1 className="font-serif text-lg text-primary hover:text-primary/90 transition-colors">
+            <span className="mx-0.5">mocha</span>
             <span className="text-primary/70">.email</span>
           </h1>
         </Link>

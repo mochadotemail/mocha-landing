@@ -157,7 +157,6 @@ export default function FeaturesSection() {
                 name={feature.name}
                 className={`${feature.className} [&_h3]:text-foreground dark:[&_h3]:text-neutral-300 [&_p]:text-muted-foreground dark:[&_p]:text-neutral-400 [&_svg]:text-foreground dark:[&_svg]:text-neutral-300`}
                 background={feature.background}
-                Icon={IconComponent}
                 description={feature.description}
                 href={feature.href}
                 cta={feature.cta}
