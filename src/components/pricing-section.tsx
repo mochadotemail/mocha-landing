@@ -172,7 +172,7 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-4">
             Need a custom plan for your team?
@@ -180,7 +180,7 @@ export default function PricingSection() {
           <Button variant="link" className="text-primary hover:text-primary/80">
             Contact Sales →
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

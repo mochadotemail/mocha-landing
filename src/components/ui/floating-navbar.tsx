@@ -9,9 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
 import { CTAButton } from "./cta-button";
-import { ArrowUpRight } from "lucide-react";
 
 // Smooth scroll function
 const scrollToSection = (sectionId: string) => {
@@ -68,12 +66,12 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-2xl shadow-lg z-[5000] px-4 py-3 items-center justify-between",
+          "flex w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-full shadow-lg z-[5000] px-3 py-2 items-center justify-between",
           className
         )}
       >
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0 mx-2">
           <h1 className="font-serif text-lg text-primary hover:text-primary/90 transition-colors">
             <span className="mx-0.5">mocha</span>
             <span className="text-primary/70">.email</span>
@@ -121,7 +119,7 @@ export const FloatingNav = ({
 
         {/* CTA Button */}
         <div className="flex items-center gap-4 flex-shrink-0">
-          <CTAButton />
+          <CTAButton className="rounded-full" />
         </div>
       </motion.div>
     </AnimatePresence>
