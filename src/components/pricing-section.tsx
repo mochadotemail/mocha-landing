@@ -64,7 +64,7 @@ export default function PricingSection() {
             <span>Brew Your</span>
             <span className="text-primary italic">Mocha Plan</span>
           </h2>
-          <p className="w-2/5 text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="lg:w-2/5 w-2/3 text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
             Start free and upgrade to Plus for unlimited AI email features like smart drafting and inbox management.
           </p>
 
