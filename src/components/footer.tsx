@@ -27,15 +27,16 @@ export default function Footer() {
             <h4 className="text-sm font-medium text-foreground mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {/* <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li> */}
-              <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
+              <li><a href="mailto:info@mocha.email" className="hover:text-primary transition-colors">Contact Us</a></li>
+              <li><a href="https://discord.gg/gQd2JJVuvb" className="hover:text-primary transition-colors">Discord</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Social</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="https://twitter.com/mochaemail" className="hover:text-primary transition-colors">Twitter</a></li>
+              <li><a href="https://x.com/mochadotemail" className="hover:text-primary transition-colors">X (Formerly Twitter)</a></li>
               {/* <li><a href="https://linkedin.com/company/mochaemail" className="hover:text-primary transition-colors">LinkedIn</a></li> */}
-              <li><a href="https://github.com/mochaemail" className="hover:text-primary transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/mochadotemail" className="hover:text-primary transition-colors">GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -46,8 +47,8 @@ export default function Footer() {
               © 2025 Mocha Engineering, Inc. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-muted-foreground/50 hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-muted-foreground/50 hover:text-primary transition-colors">Terms of Service</a>
+              <a href="/privacy-policy" className="text-sm text-muted-foreground/50 hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="/terms-of-service" className="text-sm text-muted-foreground/50 hover:text-primary transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

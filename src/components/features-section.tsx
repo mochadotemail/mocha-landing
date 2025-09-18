@@ -132,12 +132,11 @@ export default function FeaturesSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-tight mb-6 space-x-2">
             <span>Features that make email</span>
-            <br />
             <span className="text-primary italic">effortless</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="w-2/5 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Everything you need to master your inbox with AI-powered
             productivity tools
           </p>
