@@ -3,7 +3,7 @@ import { Inter, Instrument_Serif, Figtree, Newsreader } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
 import Footer from "@/components/footer";
-import { IconHome, IconUser, IconMessage } from "@tabler/icons-react";
+import { IconHome, IconUser, IconMessage, IconStar, IconMoneybag, IconNews } from "@tabler/icons-react";
 import { FloatingNav } from "../components/ui/floating-navbar";
 import Navbar from "@/components/navbar";
 import { AuroraBackground } from "@/components/ui/shadcn-io/aurora-background";
@@ -56,19 +56,19 @@ export default function RootLayout({
      {
        name: "Features",
        link: "#features",
-       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       icon: <IconStar className="h-4 w-4 text-neutral-500 dark:text-white" />,
        ariaLabel: "View features section",
      },
      {
        name: "Pricing",
        link: "#pricing",
-       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       icon: <IconMoneybag className="h-4 w-4 text-neutral-500 dark:text-white" />,
        ariaLabel: "View pricing section",
      },
      {
        name: "Manifesto",
        link: "/manifesto",
-       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+       icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
        ariaLabel: "Read manifesto",
      },
    ];

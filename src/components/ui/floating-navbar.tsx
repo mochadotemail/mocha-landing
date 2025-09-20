@@ -66,7 +66,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-full shadow-lg z-[5000] px-3 py-2 items-center justify-between",
+          "flex w-5/6 lg:w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-full shadow-lg z-[5000] px-3 py-2 items-center justify-between",
           className
         )}
       >
@@ -118,7 +118,7 @@ export const FloatingNav = ({
         </div>
 
         {/* CTA Button */}
-        <div className="flex items-center gap-4 flex-shrink-0">
+        <div className="md:flex hidden items-center gap-4 flex-shrink-0">
           <CTAButton className="rounded-full" />
         </div>
       </motion.div>
