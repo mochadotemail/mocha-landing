@@ -94,7 +94,7 @@ export default function PricingSection() {
             >
               Yearly
             </span>
-            <span className={`text-xs ${ isYearly ? "text-green-600 bg-green-50" : "bg-red-50 text-red-600"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}>
+            <span className={`text-xs ${ isYearly ? "text-primary bg-primary/10" : "text-muted-foreground bg-muted"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}>
               Save {isYearly ? '40' : '0'}%
             </span>
           </div>
@@ -105,7 +105,7 @@ export default function PricingSection() {
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`group relative flex flex-col bg-gradient-to-b from-white to-gray-50 rounded-2xl border p-6 transition-all duration-500 hover:shadow-sm hover:shadow-primary/10 hover:border-primary/20 ${
+              className={`group relative flex flex-col bg-card rounded-2xl border p-6 transition-all duration-500 hover:shadow-sm hover:shadow-primary/10 hover:border-primary/20 ${
                 plan.popular ? "ring-1 ring-primary/20 shadow-md" : ""
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
@@ -152,7 +152,7 @@ export default function PricingSection() {
                     className="flex items-start gap-3 group/feature"
                   >
                     <div className="flex-shrink-0 mt-0.5">
-                      <Check className="w-4 h-4 text-green-600 transition-transform duration-200" />
+                      <Check className="w-4 h-4 text-primary transition-transform duration-200" />
                     </div>
                     <span className="text-sm text-muted-foreground transition-colors duration-200">
                       {feature}
@@ -164,17 +164,18 @@ export default function PricingSection() {
               <hr className="border-muted my-6" />
               
               <div className="mt-auto">
-                <button
+                <Button
+                  variant={plan.buttonVariant}
+                  size="default"
                   className={cn(
-                    "group w-full flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 focus:ring-2 focus:ring-amber-500/50 focus:ring-offset-2",
-                    plan.name === "Plus"
-                      ? "bg-amber-600 hover:bg-amber-600/90 text-white shadow-sm border border-amber-600/50"
-                      : "border-2 border-amber-600/50 text-amber-600 hover:bg-amber-50 hover:border-amber-600"
+                    "w-full group rounded-xl",
+                    plan.buttonVariant === "default" && "border border-primary/50",
+                    plan.buttonVariant === "outline" && "border-2 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary hover:text-primary"
                   )}
                 >
                   {plan.buttonText}
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </Button>
               </div>
             </div>
           ))}

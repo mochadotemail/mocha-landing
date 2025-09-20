@@ -1,4 +1,4 @@
-import { CTAButton } from "./ui/cta-button";
+import { Button } from "./ui/button";
 import HeroVisual from "./hero-visual";
 import { AuroraBackground } from "./ui/shadcn-io/aurora-background";
 
@@ -23,7 +23,7 @@ export default function HeroSection() {
       </div>
       </div>
       </AuroraBackground>
-      <CTAButton className="mx-auto mt-4"/>
+      <Button className="mx-auto mt-4">Join Waitlist</Button>
       <HeroVisual />
 
     </div>

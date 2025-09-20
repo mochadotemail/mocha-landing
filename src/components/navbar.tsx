@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
-import { CTAButton } from "./ui/cta-button";
+import { Button } from "./ui/button";
 
 // Smooth scroll function
 const scrollToSection = (sectionId: string) => {
@@ -122,7 +122,7 @@ export default function Navbar() {
         </div>
         <div className="lg:flex items-center gap-4 hidden">
           <ModeToggle />
-          <CTAButton />
+          <Button>Join Waitlist</Button>
         </div>
       </div>
       </div>

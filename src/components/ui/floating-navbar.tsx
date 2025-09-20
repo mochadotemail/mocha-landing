@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { CTAButton } from "./cta-button";
+import { Button } from "./button";
 
 // Smooth scroll function
 const scrollToSection = (sectionId: string) => {
@@ -119,7 +119,7 @@ export const FloatingNav = ({
 
         {/* CTA Button */}
         <div className="md:flex hidden items-center gap-4 flex-shrink-0">
-          <CTAButton className="rounded-full" />
+          <Button className="rounded-full">Join Waitlist</Button>
         </div>
       </motion.div>
     </AnimatePresence>
