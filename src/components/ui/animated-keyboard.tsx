@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { memo, ReactNode, useEffect, useState } from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority";
+import { memo, type ReactNode, useEffect, useState } from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface CSSCustomProperties extends React.CSSProperties {
-  "--keycap-height"?: string
+  "--keycap-height"?: string;
 }
 
 type KeycapProps = {
-  height?: string
-  keylightColor?: "default" | "red" | "blue" | "green" | "purple" | "rgb"
-  char?: string
-  secondaryChar?: string
-  className?: string
-} & VariantProps<typeof keycapVariants>
+  height?: string;
+  keylightColor?: "default" | "red" | "blue" | "green" | "purple" | "rgb";
+  char?: string;
+  secondaryChar?: string;
+  className?: string;
+} & VariantProps<typeof keycapVariants>;
 
 const keycapVariants = cva(
   "relative flex flex-shrink-0 cursor-pointer flex-col items-center justify-center rounded-[5px] bg-gradient-to-b p-2 leading-4 bg-blend-overlay transition-all duration-200 ease-out select-none",
@@ -34,8 +34,8 @@ const keycapVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
-)
+  },
+);
 
 const keylightColors = {
   default: {
@@ -63,7 +63,7 @@ const keylightColors = {
       "before:shadow-[0px_1px_3px_0px_var(--rgb-color)] before:transition-[box-shadow] before:duration-300 before:ease-in-out",
     dark: "dark:before:shadow-[0px_2px_5px_0px_var(--rgb-color)] before:transition-[box-shadow] before:duration-300 before:ease-in-out",
   },
-}
+};
 
 const rgbColors = [
   "#ff0000",
@@ -72,16 +72,16 @@ const rgbColors = [
   "#00ffff",
   "#00ff00",
   "#ffff00",
-]
+];
 
 const RGBAnimation = memo(function RGBAnimation({
   currentColorIndex,
   keylightColor,
 }: {
-  currentColorIndex: number
-  keylightColor: string
+  currentColorIndex: number;
+  keylightColor: string;
 }) {
-  if (keylightColor !== "rgb") return null
+  if (keylightColor !== "rgb") return null;
 
   return (
     <style jsx global>{`
@@ -89,8 +89,8 @@ const RGBAnimation = memo(function RGBAnimation({
         --rgb-color: ${rgbColors[currentColorIndex]};
       }
     `}</style>
-  )
-})
+  );
+});
 
 export const Keycap = memo(function Keycap({
   height = "48px",
@@ -100,22 +100,22 @@ export const Keycap = memo(function Keycap({
   variant,
   className,
 }: KeycapProps) {
-  const [currentColorIndex, setCurrentColorIndex] = useState(0)
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   if (secondaryChar && variant !== "double") {
-    console.warn("secondaryChar should only be used with variant 'double'")
-    secondaryChar = undefined
+    console.warn("secondaryChar should only be used with variant 'double'");
+    secondaryChar = undefined;
   }
 
   useEffect(() => {
-    if (keylightColor !== "rgb") return
+    if (keylightColor !== "rgb") return;
 
     const interval = setInterval(() => {
-      setCurrentColorIndex((prev) => (prev + 1) % rgbColors.length)
-    }, 3000)
+      setCurrentColorIndex((prev) => (prev + 1) % rgbColors.length);
+    }, 3000);
 
-    return () => clearInterval(interval)
-  }, [keylightColor])
+    return () => clearInterval(interval);
+  }, [keylightColor]);
 
   return (
     <>
@@ -140,7 +140,7 @@ export const Keycap = memo(function Keycap({
           keylightColors[keylightColor].dark,
           "h-[var(--keycap-height)]",
           "will-change-transform",
-          className
+          className,
         )}
       >
         <div className="relative z-10 flex h-full flex-col items-center justify-center">
@@ -161,21 +161,21 @@ export const Keycap = memo(function Keycap({
         </div>
       </div>
     </>
-  )
-})
+  );
+});
 
 type KeyboardProps = {
-  children: ReactNode
-  className?: string
-  gap?: "sm" | "md" | "lg"
-}
+  children: ReactNode;
+  className?: string;
+  gap?: "sm" | "md" | "lg";
+};
 
 export function Keyboard({ children, className, gap = "md" }: KeyboardProps) {
   return (
     <div
       className={cn(
         "border-border rounded-[10px] border !bg-white p-2.5 dark:!bg-[#21222550]",
-        className
+        className,
       )}
     >
       <div
@@ -188,14 +188,14 @@ export function Keyboard({ children, className, gap = "md" }: KeyboardProps) {
         {children}
       </div>
     </div>
-  )
+  );
 }
 
 type KeyRowProps = {
-  children: ReactNode
-  className?: string
-  gap?: "sm" | "md" | "lg"
-}
+  children: ReactNode;
+  className?: string;
+  gap?: "sm" | "md" | "lg";
+};
 
 export function KeyRow({ children, className, gap = "md" }: KeyRowProps) {
   return (
@@ -207,10 +207,10 @@ export function KeyRow({ children, className, gap = "md" }: KeyRowProps) {
           "gap-2.5": gap === "md",
           "gap-3": gap === "lg",
         },
-        className
+        className,
       )}
     >
       {children}
     </div>
-  )
+  );
 }

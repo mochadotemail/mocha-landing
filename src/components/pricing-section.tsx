@@ -1,8 +1,9 @@
 "use client";
 
+import { ArrowUpRight, Check } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { Check } from "lucide-react";
 
 interface PricingPlan {
   name: string;
@@ -22,12 +23,12 @@ export default function PricingSection() {
     {
       name: "Free",
       price: "₹0",
-      description: "Start exploring. A complete experience for occasional use.",
+      description:
+        "Perfect for getting started with Mocha. Manage your emails with ease for occasional use.",
       features: [
         "Basic email management",
-        "Up to 100 emails per day",
         "Standard AI replies",
-        "Mobile app access",
+        "Limited email templates",
       ],
       buttonText: "Get Started",
       buttonVariant: "outline",
@@ -37,36 +38,35 @@ export default function PricingSection() {
       price: isYearly ? "₹3,950" : "₹658.33",
       originalPrice: isYearly ? "₹7,900" : "₹658.33",
       description:
-        "For your daily workflow. Remove all limits and make Craft your everyday creative home. Purchase now to lock in this special discount for the following year too.",
+        "Power your professional email workflow with Mocha Plus. Unlimited access to AI drafting, smart sorting, and advanced features. Lock in savings with annual billing.",
       features: [
-        "Unlimited storage & content",
-        "Advanced AI personalization",
-        "Premium templates",
-        "Team collaboration",
-        "API access",
-        "White-label options",
-        "Priority support",
-        "Custom rules",
+        "Everything in Free",
+        "AI-powered email drafting and replies",
+        "Smart inbox sorting & priority labels",
+        "Custom email templates",
+        "Team shared inboxes",
+        "API integration",
+        "24/7 priority support",
+        "Advanced filtering rules",
       ],
       popular: true,
-      buttonText: "Purchase Now",
+      buttonText: "Upgrade to Plus",
       buttonVariant: "default",
     },
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 bg-background">
+    <section id="pricing" className="pb-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-tight mb-6">
-            <span>Choose The Plan</span>
-            <br />
-            <span className="text-primary italic">That's Right For You</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-tight mb-6 space-x-2">
+            <span>Brew Your</span>
+            <span className="text-primary italic">Mocha Plan</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Start with free and upgrade to Plus for unlimited access. All plans
-            include our core AI-powered email features.
+          <p className="lg:w-2/5 w-2/3 text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            Start free and upgrade to Plus for unlimited AI email features like
+            smart drafting and inbox management.
           </p>
 
           {/* Billing Toggle for Plus Plan */}
@@ -95,11 +95,11 @@ export default function PricingSection() {
             >
               Yearly
             </span>
-            {isYearly && (
-              <span className="text-xs text-green-600 font-medium bg-green-50 dark:bg-green-950 px-2 py-1 rounded-full animate-fade-in">
-                Save 40%
-              </span>
-            )}
+            <span
+              className={`text-xs ${isYearly ? "text-primary bg-primary/10" : "text-muted-foreground bg-muted"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}
+            >
+              Save {isYearly ? "40" : "0"}%
+            </span>
           </div>
         </div>
 
@@ -108,8 +108,8 @@ export default function PricingSection() {
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`group relative bg-card rounded-2xl border p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 hover:scale-[1.02] ${
-                plan.popular ? "ring-2 ring-primary/20 shadow-lg" : ""
+              className={`group relative flex flex-col bg-card rounded-2xl border p-6 transition-all duration-500 hover:shadow-sm hover:shadow-primary/10 hover:border-primary/20 ${
+                plan.popular ? "ring-1 ring-primary/20 shadow-md" : ""
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -121,58 +121,73 @@ export default function PricingSection() {
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
-                  {plan.name}
-                </h3>
-                <div className="mb-3">
-                  <span className="text-3xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  {plan.name !== "Free" && (
-                    <span className="text-muted-foreground text-sm">
-                      {isYearly && plan.name === "Plus" ? "/year" : "/month"}
+              <div className="text-left mb-6 mt-4">
+                <div className="h-40">
+                  <h3 className="text-xl text-foreground/70 mb-2 group-hover:text-primary transition-colors duration-200">
+                    {" "}
+                    {plan.name}
+                  </h3>
+                  <div className="mb-3">
+                    <span className="text-3xl font-bold text-foreground">
+                      {plan.price}
                     </span>
-                  )}
-                  {plan.originalPrice && isYearly && plan.name === "Plus" && (
-                    <div className="text-sm text-muted-foreground line-through mt-1">
-                      {plan.originalPrice}/year
-                    </div>
-                  )}
+                    {plan.name !== "Free" && (
+                      <span className="text-muted-foreground text-sm">
+                        {isYearly && plan.name === "Plus" ? "/year" : "/month"}
+                      </span>
+                    )}
+                    {plan.originalPrice && isYearly && plan.name === "Plus" && (
+                      <div className="text-sm text-muted-foreground line-through mt-1">
+                        {plan.originalPrice}/year
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {plan.description}
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {plan.description}
-                </p>
+                <hr className="border-muted my-6" />
               </div>
 
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-6 flex-1">
                 {plan.features.map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
                     className="flex items-start gap-3 group/feature"
                   >
                     <div className="flex-shrink-0 mt-0.5">
-                      <Check className="w-4 h-4 text-green-600 group-hover/feature:scale-110 transition-transform duration-200" />
+                      <Check className="w-4 h-4 text-primary transition-transform duration-200" />
                     </div>
-                    <span className="text-sm text-muted-foreground group-hover/feature:text-foreground transition-colors duration-200">
+                    <span className="text-sm text-muted-foreground transition-colors duration-200">
                       {feature}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <Button
-                variant={plan.buttonVariant}
-                className="w-full transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
-                size="lg"
-              >
-                {plan.buttonText}
-              </Button>
+              <hr className="border-muted my-6" />
+
+              <div className="mt-auto">
+                <Button
+                  variant={plan.buttonVariant}
+                  size="default"
+                  className={cn(
+                    "w-full group rounded-xl",
+                    plan.buttonVariant === "default" &&
+                      "border border-primary/50",
+                    plan.buttonVariant === "outline" &&
+                      "border-2 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary hover:text-primary",
+                  )}
+                >
+                  {plan.buttonText}
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Button>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-4">
             Need a custom plan for your team?
@@ -180,7 +195,7 @@ export default function PricingSection() {
           <Button variant="link" className="text-primary hover:text-primary/80">
             Contact Sales →
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
