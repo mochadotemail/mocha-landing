@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Figtree, Newsreader } from "next/font/google";
+import { Figtree, Instrument_Serif, Inter, Newsreader } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/lib/theme-provider";
+import {
+  IconHome,
+  IconMoneybag,
+  IconNews,
+  IconStar,
+} from "@tabler/icons-react";
 import Footer from "@/components/footer";
-import { IconHome, IconUser, IconMessage, IconStar, IconMoneybag, IconNews } from "@tabler/icons-react";
-import { FloatingNav } from "../components/ui/floating-navbar";
 import Navbar from "@/components/navbar";
-import { AuroraBackground } from "@/components/ui/shadcn-io/aurora-background";
+import { ThemeProvider } from "@/lib/theme-provider";
+import { FloatingNav } from "../components/ui/floating-navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,33 +49,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-   const navItems = [
-     {
-       name: "Home",
-       link: "#hero",
-       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-       ariaLabel: "Go to home section",
-     },
-     {
-       name: "Features",
-       link: "#features",
-       icon: <IconStar className="h-4 w-4 text-neutral-500 dark:text-white" />,
-       ariaLabel: "View features section",
-     },
-     {
-       name: "Pricing",
-       link: "#pricing",
-       icon: <IconMoneybag className="h-4 w-4 text-neutral-500 dark:text-white" />,
-       ariaLabel: "View pricing section",
-     },
-     {
-       name: "About",
-       link: "/about",
-       icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
-       ariaLabel: "Read about",
-     },
-   ];
+  const navItems = [
+    {
+      name: "Home",
+      link: "#hero",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      ariaLabel: "Go to home section",
+    },
+    {
+      name: "Features",
+      link: "#features",
+      icon: <IconStar className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      ariaLabel: "View features section",
+    },
+    {
+      name: "Pricing",
+      link: "#pricing",
+      icon: (
+        <IconMoneybag className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+      ariaLabel: "View pricing section",
+    },
+    {
+      name: "About",
+      link: "/about",
+      icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      ariaLabel: "Read about",
+    },
+  ];
 
   return (
     <html
@@ -98,7 +103,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar/>
+          <Navbar />
           <FloatingNav navItems={navItems} />
           {children}
           <Footer />

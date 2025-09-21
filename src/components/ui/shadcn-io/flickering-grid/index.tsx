@@ -1,12 +1,7 @@
-'use client';
+"use client";
 
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import type React from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface FlickeringGridProps {
@@ -180,7 +175,13 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   }, [setupCanvas, updateSquares, drawGrid, width, height, isInView]);
 
   return (
-    <div ref={containerRef} className={cn("w-full h-full [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]", className)}>
+    <div
+      ref={containerRef}
+      className={cn(
+        "w-full h-full [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]",
+        className,
+      )}
+    >
       <canvas
         ref={canvasRef}
         className="pointer-events-none"

@@ -1,13 +1,14 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
 import {
-  motion,
   AnimatePresence,
-  useScroll,
+  motion,
   useMotionValueEvent,
+  useScroll,
 } from "framer-motion";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import type React from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
@@ -21,7 +22,6 @@ const scrollToSection = (sectionId: string) => {
     });
   }
 };
-
 
 export const FloatingNav = ({
   navItems,
@@ -46,7 +46,7 @@ export const FloatingNav = ({
       if (scrollYProgress.get() < 0.05) {
         setVisible(false);
       } else {
-        setVisible(true)
+        setVisible(true);
       }
     }
   });
@@ -67,7 +67,7 @@ export const FloatingNav = ({
         }}
         className={cn(
           "flex w-5/6 lg:w-full max-w-2xl fixed top-10 left-1/2 -translate-x-1/2 border border-border/40 bg-card/30 backdrop-blur-xl rounded-full shadow-lg z-[5000] px-3 py-2 items-center justify-between",
-          className
+          className,
         )}
       >
         {/* Logo */}
@@ -81,7 +81,7 @@ export const FloatingNav = ({
         {/* Nav Links */}
         <div className="flex items-center gap-4 mx-4 flex-nowrap">
           {navItems.map((navItem: any, idx: number) => {
-            if (navItem.link.startsWith('#')) {
+            if (navItem.link.startsWith("#")) {
               const sectionId = navItem.link.slice(1);
               return (
                 <button

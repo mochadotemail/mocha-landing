@@ -1,10 +1,9 @@
 "use client";
 
+import { ArrowUpRight, Check } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { ArrowUpRight } from "lucide-react";
-import { Check } from "lucide-react";
 
 interface PricingPlan {
   name: string;
@@ -24,7 +23,8 @@ export default function PricingSection() {
     {
       name: "Free",
       price: "₹0",
-      description: "Perfect for getting started with Mocha. Manage your emails with ease for occasional use.",
+      description:
+        "Perfect for getting started with Mocha. Manage your emails with ease for occasional use.",
       features: [
         "Basic email management",
         "Standard AI replies",
@@ -65,7 +65,8 @@ export default function PricingSection() {
             <span className="text-primary italic">Mocha Plan</span>
           </h2>
           <p className="lg:w-2/5 w-2/3 text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Start free and upgrade to Plus for unlimited AI email features like smart drafting and inbox management.
+            Start free and upgrade to Plus for unlimited AI email features like
+            smart drafting and inbox management.
           </p>
 
           {/* Billing Toggle for Plus Plan */}
@@ -94,8 +95,10 @@ export default function PricingSection() {
             >
               Yearly
             </span>
-            <span className={`text-xs ${ isYearly ? "text-primary bg-primary/10" : "text-muted-foreground bg-muted"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}>
-              Save {isYearly ? '40' : '0'}%
+            <span
+              className={`text-xs ${isYearly ? "text-primary bg-primary/10" : "text-muted-foreground bg-muted"} font-medium  px-2 py-1 rounded-full animate-fade-in transition-opacity`}
+            >
+              Save {isYearly ? "40" : "0"}%
             </span>
           </div>
         </div>
@@ -120,27 +123,28 @@ export default function PricingSection() {
 
               <div className="text-left mb-6 mt-4">
                 <div className="h-40">
-
-                <h3 className="text-xl text-foreground/70 mb-2 group-hover:text-primary transition-colors duration-200"> {plan.name}
-                </h3>
-                <div className="mb-3">
-                  <span className="text-3xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  {plan.name !== "Free" && (
-                    <span className="text-muted-foreground text-sm">
-                      {isYearly && plan.name === "Plus" ? "/year" : "/month"}
+                  <h3 className="text-xl text-foreground/70 mb-2 group-hover:text-primary transition-colors duration-200">
+                    {" "}
+                    {plan.name}
+                  </h3>
+                  <div className="mb-3">
+                    <span className="text-3xl font-bold text-foreground">
+                      {plan.price}
                     </span>
-                  )}
-                  {plan.originalPrice && isYearly && plan.name === "Plus" && (
-                    <div className="text-sm text-muted-foreground line-through mt-1">
-                      {plan.originalPrice}/year
-                    </div>
-                  )}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {plan.description}
-                </p>
+                    {plan.name !== "Free" && (
+                      <span className="text-muted-foreground text-sm">
+                        {isYearly && plan.name === "Plus" ? "/year" : "/month"}
+                      </span>
+                    )}
+                    {plan.originalPrice && isYearly && plan.name === "Plus" && (
+                      <div className="text-sm text-muted-foreground line-through mt-1">
+                        {plan.originalPrice}/year
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {plan.description}
+                  </p>
                 </div>
                 <hr className="border-muted my-6" />
               </div>
@@ -160,17 +164,19 @@ export default function PricingSection() {
                   </div>
                 ))}
               </div>
-              
+
               <hr className="border-muted my-6" />
-              
+
               <div className="mt-auto">
                 <Button
                   variant={plan.buttonVariant}
                   size="default"
                   className={cn(
                     "w-full group rounded-xl",
-                    plan.buttonVariant === "default" && "border border-primary/50",
-                    plan.buttonVariant === "outline" && "border-2 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary hover:text-primary"
+                    plan.buttonVariant === "default" &&
+                      "border border-primary/50",
+                    plan.buttonVariant === "outline" &&
+                      "border-2 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary hover:text-primary",
                   )}
                 >
                   {plan.buttonText}

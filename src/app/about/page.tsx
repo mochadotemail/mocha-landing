@@ -1,9 +1,5 @@
 "use client";
-import Link from "next/link";
 import React from "react";
-import { IconArrowUpRight } from "@tabler/icons-react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
   const teamMembers = [
@@ -48,17 +44,14 @@ const AboutPage = () => {
             workflow, and adapts to how you work – not the other way around.
           </p>
           <p className="text-muted-foreground text-xl leading-relaxed mb-8">
-            We're a small team of developers and designers building tools
-            that make email more personal, programmable, and effortless to work
-            with.
+            We're a small team of developers and designers building tools that
+            make email more personal, programmable, and effortless to work with.
           </p>
         </div>
       </section>
 
-{/* Team Section */}
-<section className="w-full flex flex-col items-center mt-8 animate-slide-in-up animation-delay-200">
-       
-
+      {/* Team Section */}
+      <section className="w-full flex flex-col items-center mt-8 animate-slide-in-up animation-delay-200">
         {/* Team Grid */}
         <div className="w-full flex flex-row gap-4 sm:gap-6 justify-center flex-wrap">
           {teamMembers.map((member, index) => (
@@ -72,7 +65,7 @@ const AboutPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xl sm:text-2xl font-serif text-primary hover:text-primary/80 transition-all duration-300 ease-out transform hover:scale-105 hover-scale relative group"
-                aria-label={`Visit ${member.name}'s profile on ${member.link.includes('x.com') ? 'X' : 'LinkedIn'}`}
+                aria-label={`Visit ${member.name}'s profile on ${member.link.includes("x.com") ? "X" : "LinkedIn"}`}
               >
                 {member.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary/80 transition-all duration-300 group-hover:w-full"></span>
@@ -81,8 +74,6 @@ const AboutPage = () => {
           ))}
         </div>
       </section>
-
-
     </div>
   );
 };

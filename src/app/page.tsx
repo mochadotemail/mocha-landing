@@ -1,5 +1,5 @@
-import HeroSection from "@/components/hero-section";
 import FeaturesSection from "@/components/features-section";
+import HeroSection from "@/components/hero-section";
 import PricingSection from "@/components/pricing-section";
 
 export default function Home() {
@@ -15,10 +15,16 @@ export default function Home() {
         <section id="hero" className="animate-fadeIn">
           <HeroSection />
         </section>
-        <section id="features" className="py-16 animate-slide-in-up animation-delay-200">
+        <section
+          id="features"
+          className="py-16 animate-slide-in-up animation-delay-200"
+        >
           <FeaturesSection />
         </section>
-        <section id="pricing" className="py-16 animate-slide-in-up animation-delay-400">
+        <section
+          id="pricing"
+          className="py-16 animate-slide-in-up animation-delay-400"
+        >
           <PricingSection />
         </section>
       </div>

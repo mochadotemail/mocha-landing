@@ -1,6 +1,8 @@
 "use client";
+import type React from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import React, { ReactNode } from "react";
+
 interface AuroraBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   showRadialGradient?: boolean;
@@ -13,13 +15,7 @@ export const AuroraBackground = ({
 }: AuroraBackgroundProps) => {
   return (
     <main>
-      <div
-        className={cn(
-          "transition-bg relative",
-          className,
-        )}
-        {...props}
-      >
+      <div className={cn("transition-bg relative", className)} {...props}>
         <div
           className="absolute inset-0 overflow-hidden opacity-50"
           style={

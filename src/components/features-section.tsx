@@ -1,11 +1,11 @@
 "use client";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import KeyboardDemo from "./KeyboardDemo";
-import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
-import { HexagonBackground } from "./ui/shadcn-io/hexagon-background";
 import AnimatedEmailConversation from "./AnimatedEmailConversation";
 import AnimatedEmailMessage from "./AnimatedEmailMessage";
 import EmailUIPreview from "./EmailTagMockup";
+import KeyboardDemo from "./KeyboardDemo";
+import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
+import { HexagonBackground } from "./ui/shadcn-io/hexagon-background";
 
 export default function FeaturesSection() {
   const features = [
@@ -34,9 +34,7 @@ export default function FeaturesSection() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/15 dark:from-secondary/10 dark:to-secondary/20 rounded-xl" />
           <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
-          <AnimatedEmailMessage
-           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]"
-          />
+          <AnimatedEmailMessage className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]" />
         </div>
       ),
       className: "md:col-span-1 lg:row-span-1",
@@ -51,9 +49,7 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-chart-2/10 to-chart-4/15 dark:from-chart-2/10 dark:to-chart-4/20 rounded-xl">
-              <EmailUIPreview
-           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
-          />
+            <EmailUIPreview className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]" />
           </div>
         </div>
       ),
@@ -83,9 +79,7 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0 overflow-hidden">
           <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-muted/60 to-muted/80 dark:from-muted/40 dark:to-muted/60 rounded-xl" />
-          <AnimatedEmailConversation
-           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]"
-          />
+          <AnimatedEmailConversation className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_60%)]" />
         </div>
       ),
       className: "md:col-span-2",
@@ -99,11 +93,11 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-chart-3/10 to-chart-3/15 dark:from-chart-3/10 dark:to-chart-3/20 rounded-xl" />
-           <FlickeringGrid
-           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
-           color="orange"
-           maxOpacity={1}
-      />
+          <FlickeringGrid
+            className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
+            color="orange"
+            maxOpacity={1}
+          />
         </div>
       ),
       className: "md:col-span-1 md:row-span-2",
@@ -118,9 +112,7 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/15 dark:from-accent/10 dark:to-accent/25 rounded-xl" />
-           <HexagonBackground
-           className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]"
-      />
+          <HexagonBackground className="rounded-xl overflow-hidden [mask:linear-gradient(to_bottom,black_1%,transparent_80%)]" />
         </div>
       ),
       className: "md:col-span-1",
@@ -134,7 +126,7 @@ export default function FeaturesSection() {
       background: (
         <div className="absolute inset-0">
           <div className="overflow-hidden absolute inset-0 bg-gradient-to-br from-chart-1/10 to-chart-1/15 dark:from-chart-1/10 dark:to-chart-1/20 rounded-xl">
-          <KeyboardDemo/>
+            <KeyboardDemo />
           </div>
         </div>
       ),
@@ -161,10 +153,6 @@ export default function FeaturesSection() {
         <BentoGrid className="max-w-5xl mx-auto auto-rows-[18rem] gap-4">
           {features.map((feature, index) => {
             // Create an icon component for BentoCard
-            const IconComponent = () => (
-              <div className="text-4xl">{feature.icon}</div>
-            );
-
             return (
               <BentoCard
                 key={index}
