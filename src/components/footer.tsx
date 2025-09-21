@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/manifesto" className="hover:text-primary transition-colors">Manifesto</a></li>
+              <li><a href="/about" className="hover:text-primary transition-colors">About</a></li>
               {/* <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li> */}
             </ul>
           </div>

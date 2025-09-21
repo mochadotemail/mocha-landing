@@ -66,10 +66,10 @@ export default function RootLayout({
        ariaLabel: "View pricing section",
      },
      {
-       name: "Manifesto",
-       link: "/manifesto",
+       name: "About",
+       link: "/about",
        icon: <IconNews className="h-4 w-4 text-neutral-500 dark:text-white" />,
-       ariaLabel: "Read manifesto",
+       ariaLabel: "Read about",
      },
    ];
 
