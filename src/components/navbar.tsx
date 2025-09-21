@@ -33,19 +33,6 @@ export default function Navbar() {
           <button
             onClick={() => {
               if (pathname === "/") {
-                scrollToSection("hero");
-              } else {
-                router.push("/");
-              }
-            }}
-            className="cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
-          >
-            Home
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-          </button>
-          <button
-            onClick={() => {
-              if (pathname === "/") {
                 scrollToSection("features");
               } else {
                 router.push("/#features");
