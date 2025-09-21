@@ -21,6 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
+
     <nav className="w-full flex flex-col items-center p-4 border-b border-border/40 bg-transparent backdrop-blur-2xl">
       <div className="w-5/6 flex items-center justify-center lg:justify-between">
         <h1 className="font-serif text-2xl font-medium text-primary hover:text-primary/90 transition-colors hidden lg:block">
