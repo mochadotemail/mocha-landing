@@ -26,7 +26,14 @@ export default function HeroSection() {
           <div></div>
         </div>
       </AuroraBackground>
-      <Button className="mx-auto mt-4">Join Waitlist</Button>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4 px-4 max-w-lg mx-auto">
+        <input
+          type="email"
+          placeholder="your.email@example.com"
+          className="flex-1 px-4 py-2 border border-input rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        />
+        <Button>Join Waitlist</Button>
+      </div>
       <HeroVisual />
     </div>
   );

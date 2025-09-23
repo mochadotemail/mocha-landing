@@ -22,7 +22,7 @@ export default function PricingSection() {
   const plans: PricingPlan[] = [
     {
       name: "Free",
-      price: "₹0",
+      price: "$0",
       description:
         "Perfect for getting started with Mocha. Manage your emails with ease for occasional use.",
       features: [
@@ -35,8 +35,8 @@ export default function PricingSection() {
     },
     {
       name: "Plus",
-      price: isYearly ? "₹3,950" : "₹658.33",
-      originalPrice: isYearly ? "₹7,900" : "₹658.33",
+      price: isYearly ? "$175" : "$20",
+      originalPrice: isYearly ? "$240" : "$20",
       description:
         "Power your professional email workflow with Mocha Plus. Unlimited access to AI drafting, smart sorting, and advanced features. Lock in savings with annual billing.",
       features: [
